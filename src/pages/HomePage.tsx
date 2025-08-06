@@ -35,7 +35,7 @@ const forms: FormCardData[] = [
 		description:
 			"Validación compleja con campos dinámicos y múltiples pasos para flujos avanzados.",
 		tags: ["react-hook-form", "zod"],
-		route: "/form-advanced",
+		route: "/payment",
 	},
 ];
 
