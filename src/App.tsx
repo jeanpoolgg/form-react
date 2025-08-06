@@ -1,14 +1,7 @@
-import { Button, HStack } from "@chakra-ui/react";
-import { ColorModeButton } from "./components/ui/color-mode";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
-	return (
-		<HStack>
-			<Button>Click me</Button>
-			<Button>Click me</Button>
-			<ColorModeButton />
-		</HStack>
-	);
+	return <AppRoutes />;
 }
 
 export default App;
