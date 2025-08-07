@@ -18,7 +18,7 @@ import { useState } from "react";
 
 export function FormPayment() {
 	const [method, setMethod] = useState<"card" | "bank">("card");
-	const [shipping, setShipping] = useState<"fast" | "free">("fast");
+	const [shipping, setShipping] = useState<"fast" | "free" | "pickup">("fast");
 
 	const subtotal = 30;
 	const shippingCost = shipping === "fast" ? 4.99 : 0;
@@ -60,9 +60,10 @@ export function FormPayment() {
 								h="80px"
 								p="4"
 								border="1px solid"
-								borderColor={method === "card" ? "black" : "gray.300"}
+								borderColor={method === "card" ? "black" : "gray.700"}
 								rounded="md"
 								bg={method === "card" ? "gray.100" : "transparent"}
+								color={method === "card" ? "black" : "gray.600"}
 								textAlign="left"
 								transition="all 0.2s"
 							>
@@ -80,9 +81,10 @@ export function FormPayment() {
 								h="80px"
 								p="4"
 								border="1px solid"
-								borderColor={method === "bank" ? "black" : "gray.300"}
+								borderColor={method === "bank" ? "black" : "gray.700"}
 								rounded="md"
 								bg={method === "bank" ? "gray.100" : "transparent"}
+								color={method === "bank" ? "black" : "gray.600"}
 								textAlign="left"
 								transition="all 0.2s"
 							>
@@ -142,7 +144,7 @@ export function FormPayment() {
 									val &&
 									typeof val === "object" &&
 									"value" in val &&
-									(val.value === "fast" || val.value === "free")
+									(val.value === "fast" || val.value === "pickup")
 								) {
 									setShipping(val.value);
 								}
